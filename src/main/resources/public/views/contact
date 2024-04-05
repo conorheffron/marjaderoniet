@@ -1,0 +1,35 @@
+<div>
+	<img src="http://imageshack.com/a/img922/1034/utlBWv.png" class="background">
+    
+	<div class="starttopleft">
+		<heading-left-directive></heading-left-directive>
+
+        <p ng-show="contactSuccess" class="help-block"><font color="green">Message sent, thank you.</p>
+        <p ng-show="contactError" ng-hide="!contactError" class="help-block"><font color="red">Message failed to send, please try again.</p>
+        
+		<form name="contactForm" ng-submit="sendMessage(contactForm.$valid)" ng-hide="contactSuccess" ng-click="contactError = false">
+		   <input type="text" placeholder="Enter First Name" name="firstName" ng-model="contactRequest.firstName" required
+		      ng-minlength="3" ng-maxlength="255">
+		   <p ng-show="contactForm.firstName.$error.minlength" class="help-block"><font color="red">First Name is too short</p>
+		   <p ng-show="contactForm.firstName.$error.maxlength" class="help-block"><font color="red">First Name is too long</p>
+		   <br />
+		   <input type="text" placeholder="Enter Last Name" name="lastName" ng-model="contactRequest.lastName" required
+		      ng-minlength="3" ng-maxlength="255">
+		   <p ng-show="contactForm.lastName.$error.minlength" class="help-block"><font color="red">Last Name is too short</p>
+		   <p ng-show="contactForm.lastName.$error.maxlength" class="help-block"><font color="red">Last Name is too long</p>
+		   <br />
+		   <input type="email" placeholder="Enter E-mail" name="email" ng-model="contactRequest.email" required
+		      ng-minlength="3" ng-maxlength="255">
+		   <p ng-show="contactForm.email.$error.minlength" class="help-block"><font color="red">E-mail is too short</p>
+		   <p ng-show="contactForm.email.$error.maxlength" class="help-block"><font color="red">E-mail is too long</p>
+		   <br />
+		   <textarea placeholder="Enter Message" name="message" ng-model="contactRequest.message" required cols="40" rows="6"
+		      ng-minlength="10" ng-maxlength="255"></textarea>
+		   <p ng-show="contactForm.message.$error.minlength" class="help-block"><font color="red">Message is too short</p>
+		   <p ng-show="contactForm.message.$error.maxlength" class="help-block"><font color="red">Message is too long</p>
+		   <br />
+		   <input type="submit" >
+		</form>
+
+	</div>
+</div>

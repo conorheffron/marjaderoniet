@@ -1,0 +1,5 @@
+<div class="starttopleft">
+    <heading-left-directive></heading-left-directive>
+    
+    <editorials-text-left-directive></editorials-text-left-directive>
+</div>

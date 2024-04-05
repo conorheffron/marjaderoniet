@@ -1,0 +1,5 @@
+<div class="starttopleft">
+    <heading-left-directive></heading-left-directive>
+    
+    <graduate-text-left-directive></graduate-text-left-directive>
+</div>

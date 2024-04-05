@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainFashionApp">
+
+<head>
+    <meta name="description" content="Marjade Roniet is a Womenswear label that focuses
+            on clean lines and effortless style. At the core of the brand is
+            quality, fit and function. Special attention is placed on innovative
+            construction techniques, craftsmanship and the interaction between the
+            garment and body. Marjade Roniet looks to bring a new dimension to
+            modern luxury.">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+
+    <title>Womenswear Designer | Marjade Roniet</title>
+    
+    <base href="/">
+
+    <!-- CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/nav.css" rel="stylesheet">
+    <link href="/css/magnific-popup.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.media.js"></script>
+    <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/js/image-gallery.js"></script>
+
+    <!-- angularJS -->
+    <script type="text/javascript" src="/js/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angular-route.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
+	<!-- privacy policy -->
+	<script type="text/javascript">
+		(function(w, d) {
+			var loader = function() {
+				var s = d.createElement("script"), tag = d
+						.getElementsByTagName("script")[0];
+				s.src = "//cdn.iubenda.com/iubenda.js";
+				tag.parentNode.insertBefore(s, tag);
+			};
+			if (w.addEventListener) {
+				w.addEventListener("load", loader, false);
+			} else if (w.attachEvent) {
+				w.attachEvent("onload", loader);
+			} else {
+				w.onload = loader;
+			}
+		})(window, document);
+	</script>
+</head>
+
+<body>
+	<div id="titlebar">
+		<img src="http://imageshack.com/a/img921/8706/XgPQbx.jpg">
+	</div>
+
+    <!-- Nav bar-->
+	<div id="navbar">
+		<div class="dropdown">
+			<a href="/">Home</a>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">About</button>
+			<div class="dropdown-content">
+				<a href="/designer">Designer</a> <a href="/brand">Brand</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Collections</button>
+			<div class="dropdown-content">
+				<a href="/graduate">Graduate</a> <a href="/editorials">Editorials</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<a href="/contact">Contact</a>
+		</div>
+	</div>
+
+    <div ng-view></div>
+    <privacy-policy ng-show="privacyPolicy.show"></privacy-policy>
+
+    <div id="graduate-gallery" class="popup-gallery">
+		<a href="http://imageshack.com/a/img921/4281/GLmUN1.jpg"><img src="http://imageshack.com/a/img921/4281/GLmUN1.jpg"></a>
+		<a href="http://imageshack.com/a/img921/8050/wgXuik.jpg"><img src="http://imageshack.com/a/img921/8050/wgXuik.jpg"></a>
+		<a href="http://imageshack.com/a/img924/5397/gMXuIF.jpg"><img src="http://imageshack.com/a/img924/5397/gMXuIF.jpg"></a>
+		<a href="http://imageshack.com/a/img923/4585/3TLaJS.jpg"><img src="http://imageshack.com/a/img923/4585/3TLaJS.jpg"></a>
+		<a href="http://imageshack.com/a/img924/9854/31CpdR.jpg"><img src="http://imageshack.com/a/img924/9854/31CpdR.jpg"></a>
+		<a href="http://imageshack.com/a/img922/6721/xqfzHM.jpg"><img src="http://imageshack.com/a/img922/6721/xqfzHM.jpg"></a>
+		<a href="http://imageshack.com/a/img921/9755/Asmrth.jpg"><img src="http://imageshack.com/a/img921/9755/Asmrth.jpg"></a>
+		<a href="http://imageshack.com/a/img923/3964/7RUTCl.jpg"><img src="http://imageshack.com/a/img923/3964/7RUTCl.jpg"></a>
+		<a href="http://imageshack.com/a/img924/8929/MzY2LQ.jpg"><img src="http://imageshack.com/a/img924/8929/MzY2LQ.jpg"></a>
+		<a href="http://imageshack.com/a/img924/9928/6j7u7o.jpg"><img src="http://imageshack.com/a/img924/9928/6j7u7o.jpg"></a>
+		<a href="http://imageshack.com/a/img921/6886/Cs6a5G.jpg"><img src="http://imageshack.com/a/img921/6886/Cs6a5G.jpg"></a>
+		<a href="http://imageshack.com/a/img922/9949/pyul4N.jpg"><img src="http://imageshack.com/a/img922/9949/pyul4N.jpg"></a>
+		<a href="http://imageshack.com/a/img922/5996/EIWMrS.jpg"><img src="http://imageshack.com/a/img922/5996/EIWMrS.jpg"></a>
+		<a href="http://imageshack.com/a/img922/6721/O4Fxy4.jpg"><img src="http://imageshack.com/a/img922/6721/O4Fxy4.jpg"></a>
+		<a href="http://imageshack.com/a/img924/7035/iHNZdS.jpg"><img src="http://imageshack.com/a/img924/7035/iHNZdS.jpg"></a>
+	</div>
+    
+    <div id="editorials-gallery" class="popup-gallery">
+		<a href="http://imageshack.com/a/img922/4402/6yZQWf.jpg" title="Valeriane wears full look by Marjade Roniet. 
+		Alice wears top by Solveig Ferlet and blouse by All Saints.">
+		<img src="http://imageshack.com/a/img922/4402/6yZQWf.jpg"></a>
+		
+		<a href="http://imageshack.com/a/img924/4610/XxPFwQ.jpg" title="Valeriane wears full look by Marjade Roniet. 
+		Alice wears trousers by Marjade Roniet.">
+		<img src="http://imageshack.com/a/img924/4610/XxPFwQ.jpg"></a>
+		
+		<a href="http://imageshack.com/a/img924/9504/6jQRQS.jpg" title="Valeriane wears full look by Marjade Roniet.">
+		<img src="http://imageshack.com/a/img924/9504/6jQRQS.jpg"></a>
+		
+		<a href="http://imageshack.com/a/img923/3468/jjc3Iy.jpg" title="Valeriane wears trousers and coat by Lukwago, blouse by Marjade Roniet.">
+		<img src="http://imageshack.com/a/img923/3468/jjc3Iy.jpg"></a>
+		
+		<a href="http://imageshack.com/a/img924/8928/dLrwGw.jpg" title="Valeriane wears trousers by Marjade Roniet and jacket by Lukwago. 
+		Alice wears trousers by Lukwago and blouse by Marjade Roniet.">
+		<img src="http://imageshack.com/a/img924/8928/dLrwGw.jpg"></a>
+		
+		<p class="editorialstext">The story of two strangers, ‘A Chance Encounter’, follows isolated protagonists through a series of incidental meetings.
+	Although inconsequential at first, the two gradually form a relationship as their chance passings become an expected routine.</p>
+	
+	</div>
+    
+</body>
+ 
+</html>
