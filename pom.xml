@@ -87,6 +87,11 @@
 			<artifactId>elasticsearch</artifactId>
 			<version>7.17.20</version>
 		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.10.13</version>
+		</dependency>
 
 		<!-- E-mail -->
 		<dependency>
