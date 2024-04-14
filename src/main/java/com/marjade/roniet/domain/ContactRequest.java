@@ -1,6 +1,6 @@
 package com.marjade.roniet.domain;
 
-import org.elasticsearch.common.joda.time.DateTime;
+import org.joda.time.DateTime;
 
 import com.google.gson.annotations.SerializedName;
 
