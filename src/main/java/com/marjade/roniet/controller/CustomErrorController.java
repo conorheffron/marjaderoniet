@@ -17,7 +17,7 @@ public class CustomErrorController implements ErrorController {
 		return new ModelAndView("index.html");
 	}
 
-	@Override
+	// @Override
 	public String getErrorPath() {
 		return PATH;
 	}
