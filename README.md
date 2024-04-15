@@ -1,5 +1,7 @@
 ![Proof HTML](https://github.com/conorheffron/marjaderoniet/actions/workflows/proof-html.yml/badge.svg)
 
+![Auto Assign](https://github.com/conorheffron/marjaderoniet/actions/workflows/auto-assign.yml/badge.svg)
+
 # MarjadeRoniet
 Personal website for womens wear designer http://marjaderoniet.com/
 
