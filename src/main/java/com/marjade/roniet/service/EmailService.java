@@ -1,6 +1,9 @@
 package com.marjade.roniet.service;
 
-import com.sendgrid.SendGrid;
+import com.sendgrid.*;
+import com.sendgrid.helpers.mail.*;
+import com.sendgrid.helpers.mail.objects.*;
+import java.io.IOException;
 import com.marjade.roniet.model.Contact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,26 +20,25 @@ public class EmailService {
 	private Environment environment;
 
 	public boolean sendEmail(Contact savedContact) {
-		String from = environment.getProperty("com.marjade.roniet.admin.email");
-		String recipient = environment.getProperty("com.marjade.roniet.email.recipient");
+		Email from = new Email(environment.getProperty("com.marjade.roniet.admin.email"));
 		String subject = "Message via marjaderoniet.com from: " + savedContact.getFirstName() + " "
 				+ savedContact.getLastName();
-		String html = "Messge from: " + savedContact.getEmail() + " - " + savedContact.getMessage();
+		Email to = new Email(environment.getProperty("com.marjade.roniet.email.recipient"));
+		Content content = new Content("text/plain", "Messge from: " + savedContact.getEmail() + " - " + savedContact.getMessage());
+		Mail mail = new Mail(from, subject, to, content);
 
-		SendGrid sendgrid = new SendGrid(environment.getProperty("com.marjade.roniet.email.api.key"));
-		SendGrid.Email email = new SendGrid.Email();
-		email.addTo(recipient);
-		email.setFrom(from);
-		email.setSubject(subject);
-		email.setText(html);
-
+		SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
+		Request request = new Request();
 		try {
-			SendGrid.Response response = sendgrid.send(email);
+			request.setMethod(Method.POST);
+			request.setEndpoint("mail/send");
+			request.setBody(mail.build());
+			Response response = sg.api(request);
 			if (response.getCode() != 200) {
 				LOGGER.error(String.format("An error occurred: %s", response.getMessage()));
 				return false;
 			}
-		} catch (Exception e) {
+		} catch (IOException ex) {
 			LOGGER.error("Unexpected exception occurred while sending contact email: ", e);
 			return false;
 		}
