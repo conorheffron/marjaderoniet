@@ -2,6 +2,7 @@ package com.marjade.roniet.service;
 
 import com.sendgrid.*;
 import com.sendgrid.helpers.mail.*;
+import com.sendgrid.helpers.mail.objects.*;
 import java.io.IOException;
 import com.marjade.roniet.model.Contact;
 import org.slf4j.Logger;
