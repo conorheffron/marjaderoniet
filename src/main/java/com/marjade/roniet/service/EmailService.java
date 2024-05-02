@@ -39,7 +39,7 @@ public class EmailService {
 				return false;
 			}
 		} catch (IOException ex) {
-			LOGGER.error("Unexpected exception occurred while sending contact email: ", e);
+			LOGGER.error("Unexpected exception occurred while sending contact email: ", ex);
 			return false;
 		}
 		LOGGER.debug("Email sent.");
