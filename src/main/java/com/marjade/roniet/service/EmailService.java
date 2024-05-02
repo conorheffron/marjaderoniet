@@ -34,8 +34,8 @@ public class EmailService {
 			request.setEndpoint("mail/send");
 			request.setBody(mail.build());
 			Response response = sg.api(request);
-			if (response.getCode() != 200) {
-				LOGGER.error(String.format("An error occurred: %s", response.getMessage()));
+			if (response.getStatusCode() != 200) {
+				LOGGER.error(String.format("An error occurred: %s", response.getStatusCode()));
 				return false;
 			}
 		} catch (IOException ex) {
