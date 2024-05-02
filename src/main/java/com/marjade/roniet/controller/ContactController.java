@@ -6,7 +6,7 @@ import com.marjade.roniet.domain.ContactResponse;
 import com.marjade.roniet.domain.RequestStatus;
 import com.marjade.roniet.model.Contact;
 import com.marjade.roniet.service.EmailService;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
