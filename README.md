@@ -6,8 +6,4 @@
 
 Personal website for womens wear designer http://marjaderoniet.com/
 
-Java 8
-Spring Boot 3
-angularJS 1.6
-HTML5
-JQuery
+Tech Stack: Java 8, Spring Boot 3, angularJS 1.6, HTML5, & JQuery
