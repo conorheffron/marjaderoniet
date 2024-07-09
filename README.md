@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/conorheffron/marjaderoniet/actions/workflows/maven.yml/badge.svg)](https://github.com/conorheffron/marjaderoniet/actions/workflows/maven.yml)
+
 ![Proof HTML](https://github.com/conorheffron/marjaderoniet/actions/workflows/proof-html.yml/badge.svg)
 
 ![Auto Assign](https://github.com/conorheffron/marjaderoniet/actions/workflows/auto-assign.yml/badge.svg)
