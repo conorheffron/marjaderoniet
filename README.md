@@ -36,14 +36,14 @@ http://localhost:8080/
 ```
 http://localhost:8080/contact
 ```
-![image](https://github.com/user-attachments/assets/5c39f20e-dabb-4a83-815d-0e27c22b44c6)
+![contact-form](./contact-form.png)
 
 ```
 http://localhost:8080/h2-console
 ```
 
-![image](https://github.com/user-attachments/assets/d8cf95f9-58b8-4918-93aa-6f99721676b2)
+![h2-console](./h2-console.png)
 
-![image](https://github.com/user-attachments/assets/c90a3fc1-a751-432d-9aa9-28d065352eb9)
+![db-query-contacts](db-query-contacts.png)
 
 
