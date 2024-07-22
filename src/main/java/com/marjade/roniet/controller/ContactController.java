@@ -5,7 +5,6 @@ import com.marjade.roniet.domain.ContactRequest;
 import com.marjade.roniet.domain.ContactResponse;
 import com.marjade.roniet.domain.RequestStatus;
 import com.marjade.roniet.model.Contact;
-import com.marjade.roniet.service.EmailService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,9 +24,6 @@ public class ContactController {
 	@Autowired
 	private ContactDao contactDao;
 
-	@Autowired
-	private EmailService emailService;
-	
 	@Autowired
 	private Environment environment;
 
@@ -52,7 +48,7 @@ public class ContactController {
 
 		String recipient = environment.getProperty("com.marjade.roniet.email.recipient");
 		Contact contact = new Contact(email, firstName, lastName, message, recipient);
-		
+
 		// send to message queue
 		contactRequest.setRecipient(recipient);
 					
@@ -69,15 +65,8 @@ public class ContactController {
 			return new ContactResponse(false, RequestStatus.SAVE_FAIL);
 		}
 
-		// send email
-		boolean response = emailService.sendEmail(savedContact);
-		if (response) {
-			// success
-			return new ContactResponse(true, RequestStatus.OK);
-		}
-
-		// else fail
-		return new ContactResponse(false, RequestStatus.EMAIL_FAILED);
+		// success
+		return new ContactResponse(true, RequestStatus.OK);
 	}
 
 }
