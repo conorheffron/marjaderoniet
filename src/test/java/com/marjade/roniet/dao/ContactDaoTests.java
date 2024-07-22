@@ -2,7 +2,7 @@ package com.marjade.roniet.dao;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -23,11 +23,16 @@ public class ContactDaoTests {
 
     @Test
     public void findAll() throws Exception {
-        this.testEntityManager.persist(new Contact("test@test.com", "test", "mctester", "hi", "conorheffron@gmail.com"));
-        
+        // given
+        Contact contact = new Contact("test2@test.com", "test2",
+                "mctester2", "hi there", "conorheffron@gmail.com");
+        this.testEntityManager.merge(contact);
+
+        // when
         Iterable<Contact> contacts = this.contactDao.findAll();
-        
-        assertThat(contacts.iterator().next().getMessage()).isEqualTo("hi");
+
+        // then
+        assertThat(contacts.iterator().next().getMessage()).isEqualTo("hi there");
     }
 
 }
