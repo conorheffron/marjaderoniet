@@ -4,18 +4,14 @@ import com.marjade.roniet.dao.ContactDao;
 import com.marjade.roniet.domain.ContactRequest;
 import com.marjade.roniet.domain.ContactResponse;
 import com.marjade.roniet.domain.RequestStatus;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
 @JsonTest
 public class ContactControllerJsonTests {
 
@@ -28,35 +24,32 @@ public class ContactControllerJsonTests {
 	@MockBean
     private ContactDao contactDao;
 
-	private ContactRequest contactRequest = new ContactRequest();
-
 	private ContactResponse contactResponse = new ContactResponse(false, RequestStatus.EMAIL_FAILED);
 
-	@BeforeEach
-	public void init() {
+	@Test
+	public void serializeContactRequest() throws Exception {
+		ContactRequest contactRequest = new ContactRequest();
 		contactRequest.setEmail("test@test.com");
 		contactRequest.setFirstName("test");
 		contactRequest.setLastName("mctestester");
 		contactRequest.setMessage("hi");
-	}
-
-	@Test
-	public void serializeContactRequest() throws Exception {
-		String email = contactRequest.getEmail();
 
 		// Assert against JSON file
 		assertThat(this.jacksonTesterContactRequest.write(contactRequest)).isEqualToJson("contactRequest.json");
 		// JSON path based assertions
 		assertThat(this.jacksonTesterContactRequest.write(contactRequest)).hasJsonPathStringValue("@.email");
 		assertThat(this.jacksonTesterContactRequest.write(contactRequest)).extractingJsonPathStringValue("@.email")
-				.isEqualTo(email);
+				.isEqualTo(contactRequest.getEmail());
 	}
 
 	@Test
 	public void deserializeContactRequest() throws Exception {
 		String content = "{\"firstName\":\"test\",\"lastName\":\"mctestester\",\"email\":\"test@test.com\",\"message\":\"hi\"}";
-		assertThat(this.jacksonTesterContactRequest.parse(content)).isEqualTo(contactRequest);
-		assertThat(this.jacksonTesterContactRequest.parseObject(content).getFirstName()).isEqualTo("test");
+		ContactRequest result = this.jacksonTesterContactRequest.parseObject(content);
+		assertThat(result.getFirstName()).isEqualTo("test");
+		assertThat(result.getLastName()).isEqualTo("mctestester");
+		assertThat(result.getEmail()).isEqualTo("test@test.com");
+		assertThat(result.getMessage()).isEqualTo("hi");
 	}
 
 	@Test
@@ -74,8 +67,9 @@ public class ContactControllerJsonTests {
 	@Test
 	public void deserializeContactResponse() throws Exception {
 		String content = "{\"success\":\"false\",\"requestStatus\":\"EMAIL_FAILED\"}";
-		assertThat(this.jacksonTesterContactResponse.parse(content)).isEqualTo(contactResponse);
-		assertThat(this.jacksonTesterContactResponse.parseObject(content).getRequestStatus()).isEqualTo(RequestStatus.EMAIL_FAILED);
+		ContactResponse result = this.jacksonTesterContactResponse.parseObject(content);
+		assertThat(result.getRequestStatus()).isEqualTo(RequestStatus.EMAIL_FAILED);
+		assertThat(result.isSuccess()).isEqualTo(Boolean.FALSE);
 	}
 
 }

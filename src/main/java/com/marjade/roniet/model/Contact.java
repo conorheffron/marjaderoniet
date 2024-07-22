@@ -31,18 +31,6 @@ public class Contact {
 	@Column(name = "recipient", nullable = false)
 	private String recipient;
 
-	public Contact() {
-	}
-
-	public Contact(String email, String firstName, String lastName, String message, String recipient) {
-		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.message = message;
-		this.created = new Date();
-		this.recipient = recipient;
-	}
-
 	public String getRecipient() {
 		return recipient;
 	}

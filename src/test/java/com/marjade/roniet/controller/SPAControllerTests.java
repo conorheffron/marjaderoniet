@@ -21,7 +21,7 @@ public class SPAControllerTests {
 	private MockMvc mvc;
 
 	@MockBean
-	ContactController contactController;
+	private ContactController contactController;
 
 	@Test
 	public void home() {
@@ -61,5 +61,4 @@ public class SPAControllerTests {
 			fail(uriPath, e);
 		}
 	}
-
 }

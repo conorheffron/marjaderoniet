@@ -5,6 +5,7 @@ import com.marjade.roniet.domain.ContactRequest;
 import com.marjade.roniet.domain.ContactResponse;
 import com.marjade.roniet.domain.RequestStatus;
 import com.marjade.roniet.model.Contact;
+import com.marjade.roniet.model.ContactBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,15 +48,17 @@ public class ContactController {
 		}
 
 		String recipient = environment.getProperty("com.marjade.roniet.email.recipient");
-		Contact contact = new Contact(email, firstName, lastName, message, recipient);
-
-		// send to message queue
-		contactRequest.setRecipient(recipient);
+		ContactBuilder contactBuilder = new ContactBuilder()
+				.withEmail(email)
+				.withFirstName(firstName)
+				.withLastName(lastName)
+				.withMessage(message)
+				.withRecipient(recipient);
 					
 		Contact savedContact = null;
 		try {
 			// save contact to DB
-			savedContact = contactDao.save(contact);
+			savedContact = contactDao.save(contactBuilder.build());
 			LOGGER.info("Saved contact to DB, {}", savedContact);
 			if (savedContact == null) {
 				return new ContactResponse(false, RequestStatus.SAVE_FAIL);
