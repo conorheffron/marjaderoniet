@@ -29,7 +29,7 @@ docker compose up -d
 http://localhost:8080/
 ```
 
-![image](https://github.com/user-attachments/assets/ba8389b3-0bb3-42dc-bc21-d6d2267a92c0)
+![SPA-home](./spa-home.png)
 
 
 ## View contact requests in embedded DB
