@@ -29,21 +29,21 @@ docker compose up -d
 http://localhost:8080/
 ```
 
-![SPA-home](./spa-home.png)
+![SPA-home](images/spa-home.png)
 
 
 ## View contact requests in embedded DB
 ```
 http://localhost:8080/contact
 ```
-![contact-form](./contact-form.png)
+![contact-form](images/contact-form.png)
 
 ```
 http://localhost:8080/h2-console
 ```
 
-![h2-console](./h2-console.png)
+![h2-console](images/h2-console.png)
 
-![db-query-contacts](db-query-contacts.png)
+![db-query-contacts](images/db-query-contacts.png)
 
 
