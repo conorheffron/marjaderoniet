@@ -23,3 +23,15 @@ mvn spring-boot:run
 docker image build -t marjaderoniet .
 docker compose up -d
 ```
+
+## View Single Page Application (Angular SPA)
+```
+http://localhost:8080/
+```
+
+## View contact requests in embedded DB
+```
+http://localhost:8080/contact
+
+http://localhost:8080/h2-console
+```
