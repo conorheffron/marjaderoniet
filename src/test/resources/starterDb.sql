@@ -1,3 +1,5 @@
+DROP SCHEMA IF EXISTS `marjaderoniet` CASCADE;
+
 CREATE SCHEMA `marjaderoniet`;
 
 CREATE TABLE `marjaderoniet`.`contact` (
