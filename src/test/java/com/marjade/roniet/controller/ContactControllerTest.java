@@ -9,11 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.env.Environment;
-
-import javax.script.ScriptException;
-import java.io.IOException;
 
 import static org.mockito.Mockito.*;
 import static org.hamcrest.Matchers.is;
